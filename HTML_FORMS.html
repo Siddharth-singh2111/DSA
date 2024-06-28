@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Survey FORMS-LETS LEARN IT</title>
+    <link rel="stylesheet" href="STYLEFORMS.CSS">
+</head>
+
+<body>
+    <h1>Enter your details for the journey:</h1>
+    <form action="post">
+        <div>
+            <label for="username">Enter your name:</label>
+            <input type="text" name="username" placeholder="enter your      username" id="username">
+        </div>
+        <DIV>
+            <label for="address">Enter the name of your locality:</label>
+            <input type="text" name="address" placeholder="enter your address" id="address">
+
+        </DIV>
+        <DIV>
+            <label for="pincode">Enter your pincode /label>
+            <input type="text" name="pincode" placeholder="enter your pincode" id="pincode">
+
+        </DIV>
+        <div>
+            <label for="date of  birth">Enter your destination locality</label>
+            <input type="text" name="date of birth" placeholder="enter your date of birth" id="date of birth">
+
+        </div>
+        <div>
+            <label for="city">Name of the city</label>
+            <input type="text" name="city" placeholder="enter your city name" id="city">
+        </div>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <DIV>
+            <label for="Distance">Choose the distance of travel</label>
+            <select name="Destination" id="Destination">
+                <option value="Within 10km">10km</option>
+                <option value="50km">50km</option>
+                <option value="More than 100km">100km+</option>
+            </select>
+        </DIV>
+        <DIV>
+            <label for="Mode of travel">Choose the mode of travel</label>
+            <select name="  Destination" id="Destination">
+                <option value="Bus">Bus</option>
+                <option value="Bike">Bike</option>
+                <option value="Car">Car</option>
+                <option value="Any other means">Other means</option>
+            </select>
+        </DIV>
+        <DIV>
+            <label for="comment">ENTER YOUR COMMENTS BELOW....:</label>
+            <textarea name="comment" id="comment" cols="30" rows="10">
+    </textarea>
+        </DIV>
+        <div>
+            <input type="checkbox" name="subscribe" id="subscribe" value="yes">
+            <label for="subscribe">subscribe for more updates</label>
+        </div>
+
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>

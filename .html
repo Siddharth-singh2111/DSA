@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uno Game</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      margin: 20px;
+      background-color: #2c3e50;
+      color: #ecf0f1;
+    }
+
+    #game-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #deck, #player-hand, #opponent-hand {
+      border: 1px solid #34495e;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      background-color: #ecf0f1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      width: 60px;
+      height: 90px;
+      margin: 5px;
+      border: 1px solid #3498db;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 16px;
+      background-color: #3498db;
+      color: #ecf0f1;
+      transition: background-color 0.3s ease;
+    }
+
+    .card:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <div id="deck">
+      <div class="card" onclick="playCard(this)">1</div>
+      <!-- Add more cards as needed -->
+    </div>
+    <div id="player-hand" onclick="drawCard()">Draw Card</div>
+    <div id="opponent-hand"></div>
+  </div>
+
+  <script>
+    // Sample Uno deck
+    const unoDeck = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'Skip', 'Reverse', 'Draw 2', 'Wild', 'Wild Draw 4'];
+    
+    // Shuffle the deck
+    unoDeck.sort(() => Math.random() - 0.5);
+
+    // Deal cards to player and opponent
+    const playerHand = unoDeck.splice(0, 7);
+    const opponentHand = unoDeck.splice(0, 7);
+
+    // Display cards in the UI
+    displayCards('player-hand', playerHand);
+    displayCards('opponent-hand', opponentHand);
+
+    function displayCards(containerId, cards) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = '';
+      cards.forEach(card => {
+        const cardElement = document.createElement('div');
+        cardElement.classList.add('card');
+        cardElement.textContent = card;
+        container.appendChild(cardElement);
+      });
+    }
+
+    function drawCard() {
+      const drawnCard = unoDeck.pop();
+      playerHand.push(drawnCard);
+      displayCards('player-hand', playerHand);
+    }
+
+    function playCard(cardElement) {
+      const playedCard = cardElement.textContent;
+      // Implement game logic for playing cards
+      // For simplicity, just remove the played card from the player's hand in this example
+      const cardIndex = playerHand.indexOf(playedCard);
+      if (cardIndex !== -1) {
+        playerHand.splice(cardIndex, 1);
+        displayCards('player-hand', playerHand);
+      }
+    }
+  </script>
+</body>
+</html>

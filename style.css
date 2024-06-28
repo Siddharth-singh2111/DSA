@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(193, 129, 129);
+    color:antiquewhite;
+    
+    
+}
+td{
+    border: 2px solid black;
+}
+tr{
+    border: 2px solid black;
+}

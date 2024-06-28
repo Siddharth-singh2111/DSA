@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculator.css">
+    <title>Stylish Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #2c3e50; /* Background color for the entire page */
+            color: #ecf0f1; /* Text color for the entire page */
+            flex-direction: column; /* Align content vertically */
+        }
+
+        #announcement {
+            background-color: #e74c3c; /* Background color for the announcement */
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .calculator {
+            width: 300px;
+            text-align: center;
+            background-color: #34495e; /* Background color for the calculator */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        #display {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db; /* Button background color */
+            color: #fff; /* Button text color */
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9; /* Button background color on hover */
+        }
+
+        .marquee {
+            color: #333; /* Marquee text color */
+            font-size: 14px;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #ecf0f1; /* Marquee background color */
+            border-radius: 4px;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="announcement" class="marquee">
+        <strong>GREETINGS:</strong> WELCOME TO MY CALCULATOR PROJECT
+    </div>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="appendInput('/')">/</button>
+            <button onclick="appendInput('*')">*</button>
+            <button onclick="appendInput('7')">7</button>
+            <button onclick="appendInput('8')">8</button>
+            <button onclick="appendInput('9')">9</button>
+            <button onclick="appendInput('-')">-</button>
+            <button onclick="appendInput('4')">4</button>
+            <button onclick="appendInput('5')">5</button>
+            <button onclick="appendInput('6')">6</button>
+            <button onclick="appendInput('+')">+</button>
+            <button onclick="appendInput('1')">1</button>
+            <button onclick="appendInput('2')">2</button>
+            <button onclick="appendInput('3')">3</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="appendInput('0')">0</button>
+            <button onclick="appendInput('.')">.</button>
+
+        </div>
+        </div>
+    </div>
+
+    <!-- Contact Me Section -->
+    <div id="contact" class="section">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:anchal@iiita.in">anchal@iiita.in</a></p>
+    </div>
+
+    <!-- About Us Section -->
+    <div id="about" class="section">
+        <h2>About Us</h2>
+        <p>Hello! My name is Anchal, and I am an undergrad at IIIT Agartala. This calculator project is a showcase of my coding skills and passion for web development.</p>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
